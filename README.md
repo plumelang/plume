@@ -44,3 +44,18 @@ Lightweight programming language
     - Dynamics:
         - **Heap Allocation:**
             - _Never free / deallocate._
+
+#### Third Approximation
+
+- Memory Safety:
+    - Dynamics:
+        - Heap Allocation:
+            - **UML Class Diagram Instance-Level Relationships -> Lifecycle Dependency.**
+            - **Composition -> Strong Reference:**
+                - **Single Ownership.**
+                - **Multiple Ownership:**
+                    - **(Weighted) Reference Counting.**
+            - **Association / Aggregation -> Weak Reference:**
+                - **No Weak References.**
+                - **Weak References:**
+                    - **(Random) Generational Reference.**
