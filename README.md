@@ -50,12 +50,12 @@ Lightweight programming language
 - Memory Safety:
     - Dynamics:
         - Heap Allocation:
-            - **UML Class Diagram Instance-Level Relationships -> Lifecycle Dependency.**
-            - **Composition -> Strong Reference:**
-                - **Single Ownership.**
-                - **Multiple Ownership:**
-                    - **(Weighted) Reference Counting.**
-            - **Association / Aggregation -> Weak Reference:**
-                - **No Weak References.**
-                - **Weak References:**
-                    - **(Random) Generational Reference.**
+            - **UML Class Diagram Instance-Level Relationships -> Reference Type:**
+                - **Composition -> Strong Reference:**
+                    - **Owning reference -> Controls object lifecycle.**
+                - **Association / Aggregation -> Weak Reference:**
+                    - **Non-owning reference -> Doesn't control object lifecycle.**
+            - **If there are multiple strong (owning) references:**
+                - **(Weighted) reference counting of strong references (weak references are not counted).**
+            - **If there are any weak (non-owning) references:**
+                - **Both strong and weak references are (random) generational references.**
