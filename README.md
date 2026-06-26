@@ -36,11 +36,11 @@ Incremental approach using approximations. Each approximation builds on the prev
 
 - Type Safety:
     - Invariants:
-        - **Always preserve the relevant information semantics when converting between types.**
+        - **Conversion between types, but always preserve the relevant information semantics.**
 - Memory Safety:
     - Invariants:
-        - **Always check for null references.**
-        - **Always check boundaries / Never do arbitrary pointer arithmetics.**
+        - **Null references, but always check for them.**
+        - **Pointer arithmetics, but always check boundaries, and never do arbitrary (unsafe) arithmetics.**
         - **Never convert other types of value to references.**
     - Dynamics:
         - **Heap Allocation:**
@@ -51,6 +51,7 @@ Incremental approach using approximations. Each approximation builds on the prev
 - Memory Safety:
     - Dynamics:
         - Heap Allocation:
+            - **Free / deallocate.**
             - **UML Class Diagram Instance-Level Relationships -> Reference Type:**
                 - **Composition -> Strong Reference:**
                     - **Owning reference -> Controls object lifecycle.**
