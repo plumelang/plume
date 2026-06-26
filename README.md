@@ -10,6 +10,7 @@ Lightweight programming language
 - **Thread Safety**: Correctness (including Type and Memory Safety) is always maintained when _distributing_ execution.
 
 ### Implementation
+Incremental approach using approximations. Each approximation builds on the previous ones. Bold text denotes what will not change in future approximations, and italic text denotes what is subject to change in future approximations.
 
 #### First Approximation
 
