@@ -27,6 +27,7 @@ Incremental approach using approximations. Each approximation builds on the prev
         - _No pointer arithmetics._
     - Dynamics:
         - **Stack Allocation:**
+            - **Automatic memory management.**
             - **Never escape object's scope.**
         - _No heap allocation._
 - Thread Safety:
@@ -37,6 +38,7 @@ Incremental approach using approximations. Each approximation builds on the prev
 - Type Safety:
     - Invariants:
         - **Conversion between types, but always preserve the relevant information semantics.**
+            - TODO: Define what "relevant information semantics" means.
 - Memory Safety:
     - Invariants:
         - **Null references, but always check for them.**
@@ -52,6 +54,7 @@ Incremental approach using approximations. Each approximation builds on the prev
     - Dynamics:
         - Heap Allocation:
             - **Free / deallocate.**
+            - **Manual memory management.**
             - **UML Class Diagram Instance-Level Relationships -> Reference Type:**
                 - **Composition -> Strong Reference:**
                     - **Owning reference -> Controls object lifecycle.**
