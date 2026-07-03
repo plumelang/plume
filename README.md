@@ -30,6 +30,8 @@ Incremental approach using approximations. Each approximation builds on the prev
             - **Automatic memory management.**
             - **Never escape object's scope.**
         - _No heap allocation._
+    - Syntax:
+        - **`hot ref[T]`: not null, no deallocation, no RC, object is alive.**
 - Thread Safety:
     - _No distributed execution._
 
@@ -47,6 +49,8 @@ Incremental approach using approximations. Each approximation builds on the prev
     - Dynamics:
         - **Heap Allocation:**
             - _Never free / deallocate._
+    - Syntax:
+        - **`warm ref[T]`: might be null, no deallocation, no RC, object is alive.**
 
 #### Third Approximation
 
@@ -60,7 +64,9 @@ Incremental approach using approximations. Each approximation builds on the prev
                     - **Owning reference -> Controls object lifecycle.**
                 - **Association / Aggregation -> Weak Reference:**
                     - **Non-owning reference -> Doesn't control object lifecycle.**
-            - **If there are multiple strong (owning) references:**
-                - **(Weighted) reference counting of strong references (weak references are not counted).**
-            - **If there are any weak (non-owning) references:**
-                - **Both strong and weak references are (random) generational references.**
+            - **If there are multiple references:**
+                - **(Weighted) reference counting.**
+    - Syntax:
+        - **`uniq ref[T]`: might be null, must deallocate, no RC, object is alive.**
+        - **`comp ref[T]`: might be null, must deallocate, has RC, object is alive.**
+        - **`assoc ref[T]`/`aggr ref[T]`: might be null, no deallocation, has RC, object might be dead.**
