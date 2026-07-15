@@ -10,7 +10,7 @@ Lightweight programming language
 - **Thread Safety**: Correctness (including Type and Memory Safety) is always maintained when _distributing_ execution.
 
 ### Implementation
-Incremental approach using approximations. Each approximation builds on the previous ones. Bold text denotes what will not change in future approximations, and italic text denotes what is subject to change in future approximations.
+Incremental approach using approximations. Each approximation builds on the previous ones, removing restrictions and improving resource efficiency. Bold text denotes what will not change in future approximations, and italic text denotes what is subject to change in future approximations.
 
 #### First Approximation
 
@@ -50,6 +50,7 @@ Incremental approach using approximations. Each approximation builds on the prev
         - **Heap Allocation:**
             - **Manual memory management.**
             - _Never free / deallocate._
+                - This is a leaky-by-design approach. We're intentionally sacrificing resource efficiency to ensure memory safety.
     - Syntax:
         - **`warm ref[T]`: might be null, no deallocation, no RC, object is alive.**
 
