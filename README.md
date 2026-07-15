@@ -48,6 +48,7 @@ Incremental approach using approximations. Each approximation builds on the prev
         - **Never convert other types of value to references.**
     - Dynamics:
         - **Heap Allocation:**
+            - **Manual memory management.**
             - _Never free / deallocate._
     - Syntax:
         - **`warm ref[T]`: might be null, no deallocation, no RC, object is alive.**
@@ -58,7 +59,6 @@ Incremental approach using approximations. Each approximation builds on the prev
     - Dynamics:
         - Heap Allocation:
             - **Free / deallocate.**
-            - **Manual memory management.**
             - **UML Class Diagram Instance-Level Relationships -> Reference Type:**
                 - **Composition -> Strong Reference:**
                     - **Owning reference -> Controls object lifecycle.**
